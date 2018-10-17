@@ -55,7 +55,7 @@
   </style>
 </head>
 <body>
-  <input id="text" type="text" value="请输入网址或文字" />
+  <input id="text" type="text" value="请输入文字或网址" />
   <div class="empty"></div>
   <div id="qrcode"></div>
   <div class="footer">© 2018 Power By Monster</div>
@@ -74,15 +74,15 @@
         qrcode.makeCode(elText.value)
     }
     $("#text").focus(function () {
-      //获取原始窗口的高度
       let originalHeight = document.documentElement.clientHeight || document.body.clientHeight;
       $('body').css('height', originalHeight)
       $("#text")[0].value = ''
       $('#text').css({'border-bottom': '2px solid #fff'})
     }).on("keydown", function (e) {
         if (e.keyCode == 13) {
+            $("#text").blur() 
+            $('#text').css({'border-bottom': '1px solid #fff'})
             makeCode();
-            $("#text").blur()
         }
     })
   </script>
