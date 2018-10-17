@@ -36,7 +36,7 @@
     }
     .empty{
       width: 100%;
-      height: 20px;
+      height: 100px;
     }
     #qrcode{
       width: 278px;
@@ -74,6 +74,9 @@
         qrcode.makeCode(elText.value)
     }
     $("#text").focus(function () {
+      //获取原始窗口的高度
+      let originalHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      $('body').css('height', originalHeight)
       $("#text")[0].value = ''
       $('#text').css({'border-bottom': '2px solid #fff'})
     }).on("keydown", function (e) {
