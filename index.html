@@ -74,7 +74,7 @@
         qrcode.makeCode(elText.value)
     }
     $("#text").focus(function () {
-      let originalHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      let originalHeight = document.documentElement.clientHeight || document.body.clientHeight
       $('body').css('height', originalHeight)
       $("#text")[0].value = ''
       $('#text').css({'border-bottom': '2px solid #fff'})
@@ -82,7 +82,7 @@
         if (e.keyCode == 13) {
             $("#text").blur() 
             $('#text').css({'border-bottom': '1px solid #fff'})
-            makeCode();
+            makeCode()
         }
     })
   </script>
